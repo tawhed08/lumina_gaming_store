@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Categories - Lumina</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+<nav class="navbar">
+
+    <a href="index.html" class="logo">
+        🎮 <span>LUMINA</span><b>.</b>
+        <small>GAMING STORE</small>
+    </a>
+
+
+    <div class="nav-links">
+
+        <a href="index.html">Home</a>
+
+        <a href="products.html">Products</a>
+
+        <a href="categories.html" class="active">
+            Categories
+        </a>
+
+        <a href="deals.html">Deals</a>
+
+        <a href="cart.html">
+            🛒 Cart
+            <span class="cart-count">0</span>
+        </a>
+
+        <a href="login.html">Login</a>
+
+    </div>
+
+
+    <button class="menu-btn"
+            onclick="toggleMenu()">☰</button>
+
+</nav>
+
+
+<main class="page">
+
+    <div class="page-header">
+
+        <small>EXPLORE</small>
+
+        <h1>Gaming Categories</h1>
+
+        <p>
+            Choose the gear that matches your gaming style.
+        </p>
+
+    </div>
+
+
+    <div class="category-grid">
+
+        <a href="products.html?category=keyboard"
+           class="category-card">
+
+            <div class="category-icon">
+                ⌨️
+            </div>
+
+            <h2>Keyboards</h2>
+
+            <p>
+                Mechanical gaming keyboards.
+            </p>
+
+        </a>
+
+
+        <a href="products.html?category=mouse"
+           class="category-card">
+
+            <div class="category-icon">
+                🖱️
+            </div>
+
+            <h2>Gaming Mouse</h2>
+
+            <p>
+                Fast and accurate gaming mice.
+            </p>
+
+        </a>
+
+
+        <a href="products.html?category=headset"
+           class="category-card">
+
+            <div class="category-icon">
+                🎧
+            </div>
+
+            <h2>Headsets</h2>
+
+            <p>
+                Immersive gaming audio.
+            </p>
+
+        </a>
+
+
+        <a href="products.html?category=controller"
+           class="category-card">
+
+            <div class="category-icon">
+                🎮
+            </div>
+
+            <h2>Controllers</h2>
+
+            <p>
+                Next-generation controllers.
+            </p>
+
+        </a>
+
+    </div>
+
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <div>
+
+                <small>POPULAR</small>
+
+                <h2>Products</h2>
+
+            </div>
+
+        </div>
+
+        <div id="categoryProducts"
+             class="product-grid">
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-logo">
+        🎮 LUMINA<span>.</span>
+    </div>
+
+    <p>Premium gaming gear for serious gamers.</p>
+
+</footer>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>

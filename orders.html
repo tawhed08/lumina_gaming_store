@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+<title>Orders - LUMINA</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+<main
+    class="pt-32
+    max-w-5xl
+    mx-auto px-5
+    pb-20">
+
+    <h1
+        class="text-5xl
+        font-black">
+
+        My
+        <span class="text-lime-400">
+            Orders
+        </span>
+
+    </h1>
+
+
+    <div
+        id="ordersList"
+        class="space-y-4 mt-8">
+
+    </div>
+
+</main>
+
+
+<script src="components.js"></script>
+<script src="app.js"></script>
+
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const orders =
+            JSON.parse(
+                localStorage.getItem(
+                    "luminaOrders"
+                ) || "[]"
+            );
+
+
+        const container =
+            document.getElementById(
+                "ordersList"
+            );
+
+
+        if (orders.length === 0) {
+
+            container.innerHTML = `
+
+                <div
+                    class="text-center
+                    text-gray-500
+                    py-20">
+
+                    <i
+                        class="fa-solid fa-box-open
+                        text-5xl mb-5">
+                    </i>
+
+                    <p>
+                        You don't have any orders yet.
+                    </p>
+
+                </div>
+
+            `;
+
+            return;
+
+        }
+
+
+        container.innerHTML =
+            orders.map(
+                function (order) {
+
+                    return `
+
+                        <div
+                            class="card
+                            rounded-2xl
+                            p-5">
+
+                            <div
+                                class="flex
+                                flex-wrap
+                                justify-between
+                                gap-3">
+
+                                <div>
+
+                                    <h2
+                                        class="font-bold">
+
+                                        Order #${order.id}
+
+                                    </h2>
+
+                                    <p
+                                        class="text-gray-500
+                                        text-sm mt-1">
+
+                                        ${order.date}
+
+                                    </p>
+
+                                </div>
+
+
+                                <span
+                                    class="text-lime-400
+                                    font-bold">
+
+                                    ${order.status}
+
+                                </span>
+
+                            </div>
+
+
+                            <div
+                                class="mt-4
+                                text-gray-400">
+
+                                ${order.items
+                                    .map(
+                                        item =>
+                                        `<p>
+                                            ${item.name}
+                                            × ${item.qty}
+                                        </p>`
+                                    )
+                                    .join("")
+                                }
+
+                            </div>
+
+
+                            <div
+                                class="border-t
+                                border-gray-800
+                                mt-4 pt-4
+                                flex justify-between">
+
+                                <span>
+                                    Total
+                                </span>
+
+                                <b
+                                    class="text-lime-400">
+
+                                    ${money(order.total)}
+
+                                </b>
+
+                            </div>
+
+                        </div>
+
+                    `;
+
+                }
+            ).join("");
+
+    }
+
+);
+
+</script>
+
+</body>
+</html>

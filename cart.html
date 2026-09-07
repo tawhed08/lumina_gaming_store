@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Cart - Lumina</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+<nav class="navbar">
+
+    <a href="index.html" class="logo">
+        🎮 <span>LUMINA</span><b>.</b>
+        <small>GAMING STORE</small>
+    </a>
+
+
+    <div class="nav-links">
+
+        <a href="index.html">Home</a>
+
+        <a href="products.html">Products</a>
+
+        <a href="categories.html">Categories</a>
+
+        <a href="deals.html">Deals</a>
+
+        <a href="cart.html" class="active">
+            🛒 Cart
+            <span class="cart-count">0</span>
+        </a>
+
+        <a href="login.html">Login</a>
+
+    </div>
+
+
+    <button class="menu-btn"
+            onclick="toggleMenu()">☰</button>
+
+</nav>
+
+
+<main class="page">
+
+    <div class="page-header">
+
+        <small>YOUR SHOPPING BAG</small>
+
+        <h1>Shopping Cart</h1>
+
+    </div>
+
+
+    <div id="cartContainer"></div>
+
+</main>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>

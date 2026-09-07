@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Products - Lumina</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+<nav class="navbar">
+
+    <a href="index.html" class="logo">
+        🎮 <span>LUMINA</span><b>.</b>
+        <small>GAMING STORE</small>
+    </a>
+
+    <div class="nav-links">
+
+        <a href="index.html">Home</a>
+
+        <a href="products.html" class="active">
+            Products
+        </a>
+
+        <a href="categories.html">
+            Categories
+        </a>
+
+        <a href="deals.html">
+            Deals
+        </a>
+
+        <a href="cart.html">
+            🛒 Cart
+            <span class="cart-count">0</span>
+        </a>
+
+        <a href="login.html">
+            Login
+        </a>
+
+    </div>
+
+    <button class="menu-btn"
+            onclick="toggleMenu()">☰</button>
+
+</nav>
+
+
+<main class="page">
+
+    <div class="page-header">
+
+        <small>OUR COLLECTION</small>
+
+        <h1>Gaming Products</h1>
+
+        <p>
+            Find everything you need for your ultimate gaming setup.
+        </p>
+
+    </div>
+
+
+    <div class="filter-bar">
+
+        <button onclick="filterProducts('all')">
+            All
+        </button>
+
+        <button onclick="filterProducts('keyboard')">
+            Keyboards
+        </button>
+
+        <button onclick="filterProducts('mouse')">
+            Mouse
+        </button>
+
+        <button onclick="filterProducts('headset')">
+            Headsets
+        </button>
+
+        <button onclick="filterProducts('controller')">
+            Controllers
+        </button>
+
+    </div>
+
+
+    <div id="allProducts" class="product-grid"></div>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-logo">
+        🎮 LUMINA<span>.</span>
+    </div>
+
+    <p>Premium gaming gear for serious gamers.</p>
+
+</footer>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>

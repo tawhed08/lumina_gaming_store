@@ -1,0 +1,856 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background: #080b10;
+    color: #ffffff;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.lumina-nav {
+    width: 100%;
+    height: 94px;
+
+    padding: 0 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #090d12;
+
+    border-bottom: 1px solid #252c35;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 9999;
+}
+
+
+/* LOGO */
+
+.lumina-logo {
+    position: relative;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 34px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.lumina-logo span {
+    color: #9bea20;
+}
+
+.lumina-logo small {
+    display: block;
+
+    margin-top: -4px;
+
+    color: #606975;
+
+    font-size: 8px;
+
+    letter-spacing: 5px;
+
+    font-weight: 500;
+}
+
+
+/* NAV MENU */
+
+.nav-menu {
+    display: flex;
+
+    align-items: center;
+
+    gap: 32px;
+}
+
+.nav-menu a {
+    color: #d6d9de;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #9bea20;
+}
+
+
+/* ACTIVE */
+
+.nav-menu a.active {
+    color: #9bea20;
+
+    position: relative;
+}
+
+.nav-menu a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: -13px;
+
+    height: 2px;
+
+    background: #9bea20;
+}
+
+
+/* CART */
+
+.cart {
+    position: relative;
+
+    font-size: 20px !important;
+}
+
+.cart span {
+    position: absolute;
+
+    top: -12px;
+    right: -14px;
+
+    width: 22px;
+    height: 22px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #9bea20;
+
+    color: #080b10;
+
+    border-radius: 50%;
+
+    font-size: 11px;
+
+    font-weight: 900;
+}
+
+
+/* USER */
+
+.user-icon {
+    font-size: 20px !important;
+}
+
+
+/* SIGN UP */
+
+.signup {
+    padding: 11px 20px;
+
+    background: #9bea20;
+
+    color: #080b10 !important;
+
+    border-radius: 6px;
+
+    font-weight: 800 !important;
+}
+
+.signup:hover {
+    background: #b2ff3b;
+
+    color: #080b10 !important;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.deal-hero {
+    width: 90%;
+
+    max-width: 1450px;
+
+    min-height: 430px;
+
+    margin: 45px auto;
+
+    padding: 70px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8, 11, 16, 0.98),
+            rgba(8, 11, 16, 0.88),
+            rgba(8, 11, 16, 0.65)
+        );
+
+    border: 1px solid #252c35;
+
+    border-radius: 4px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* subtle gaming glow */
+
+.deal-hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    right: -150px;
+    top: -150px;
+
+    background: #9bea20;
+
+    opacity: 0.04;
+
+    border-radius: 50%;
+}
+
+
+/* LABEL */
+
+.deal-label {
+    width: fit-content;
+
+    padding: 10px 20px;
+
+    margin-bottom: 25px;
+
+    color: #9bea20;
+
+    border: 1px solid #456d17;
+
+    border-radius: 30px;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+.deal-label span {
+    display: inline-block;
+
+    width: 8px;
+    height: 8px;
+
+    margin-right: 8px;
+
+    background: #9bea20;
+
+    border-radius: 50%;
+}
+
+
+/* HERO TITLE */
+
+.deal-hero h1 {
+    margin: 0;
+
+    font-size: clamp(42px, 6vw, 82px);
+
+    line-height: 0.98;
+
+    font-weight: 900;
+
+    letter-spacing: -3px;
+}
+
+.deal-hero h1 strong {
+    color: #9bea20;
+}
+
+
+/* HERO TEXT */
+
+.deal-hero p {
+    max-width: 700px;
+
+    margin: 30px 0;
+
+    color: #aeb5bf;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.hero-buttons {
+    display: flex;
+
+    gap: 18px;
+}
+
+
+.shop-btn,
+.outline-btn {
+    padding: 17px 28px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    transition: 0.3s ease;
+}
+
+
+.shop-btn {
+    background: #9bea20;
+
+    color: #080b10;
+}
+
+.shop-btn:hover {
+    background: #b2ff3b;
+
+    transform: translateY(-3px);
+}
+
+
+.outline-btn {
+    color: white;
+
+    border: 1px solid #3d4652;
+}
+
+.outline-btn:hover {
+    border-color: #9bea20;
+
+    color: #9bea20;
+}
+
+
+/* =========================================
+   TIMER
+========================================= */
+
+.timer-section {
+    width: 90%;
+
+    max-width: 1450px;
+
+    margin: 70px auto;
+
+    text-align: center;
+}
+
+
+.section-label {
+    margin-bottom: 12px;
+
+    color: #9bea20;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 4px;
+}
+
+
+.timer-section h2 {
+    margin: 0 0 30px;
+
+    font-size: 40px;
+
+    font-weight: 900;
+}
+
+.timer-section h2 span {
+    color: #9bea20;
+}
+
+
+/* TIMER */
+
+.timer {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+}
+
+
+.timer-item {
+    width: 110px;
+
+    padding: 20px 10px;
+
+    background: #11161d;
+
+    border: 1px solid #252c35;
+
+    border-radius: 6px;
+}
+
+
+.timer-item strong {
+    display: block;
+
+    color: #9bea20;
+
+    font-size: 35px;
+
+    font-weight: 900;
+}
+
+
+.timer-item span {
+    color: #727b87;
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   DEALS SECTION
+========================================= */
+
+.deals-section {
+    width: 90%;
+
+    max-width: 1450px;
+
+    margin: 0 auto 100px;
+}
+
+
+.section-top {
+    display: flex;
+
+    align-items: end;
+
+    justify-content: space-between;
+
+    margin-bottom: 35px;
+}
+
+
+.section-top h2 {
+    margin: 0;
+
+    font-size: 40px;
+
+    font-weight: 900;
+}
+
+.section-top h2 span {
+    color: #9bea20;
+}
+
+
+/* FILTER */
+
+#discountFilter {
+    padding: 13px 20px;
+
+    background: #11161d;
+
+    color: white;
+
+    border: 1px solid #303844;
+
+    border-radius: 6px;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+#discountFilter:focus {
+    border-color: #9bea20;
+}
+
+
+/* =========================================
+   PRODUCT GRID
+========================================= */
+
+.deal-products {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+/* =========================================
+   PRODUCT CARD
+========================================= */
+
+.deal-card {
+    position: relative;
+
+    overflow: hidden;
+
+    background: #11161d;
+
+    border: 1px solid #252c35;
+
+    border-radius: 6px;
+
+    transition: 0.3s ease;
+}
+
+
+.deal-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #9bea20;
+
+    box-shadow:
+        0 15px 40px rgba(155, 234, 32, 0.08);
+}
+
+
+/* IMAGE */
+
+.deal-card img {
+    width: 100%;
+
+    height: 190px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* DISCOUNT BADGE */
+
+.discount-badge {
+    position: absolute;
+
+    top: 12px;
+    left: 12px;
+
+    padding: 6px 10px;
+
+    background: #9bea20;
+
+    color: #080b10;
+
+    border-radius: 4px;
+
+    font-size: 11px;
+
+    font-weight: 900;
+}
+
+
+/* CONTENT */
+
+.deal-card-content {
+    padding: 17px;
+}
+
+
+.deal-card h3 {
+    margin: 0 0 10px;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 700;
+}
+
+
+.deal-card p {
+    color: #727b87;
+
+    font-size: 13px;
+}
+
+
+/* PRICE */
+
+.original-price {
+    color: #5d6671;
+
+    text-decoration: line-through;
+
+    font-size: 13px;
+}
+
+
+.sale-price {
+    margin-left: 7px;
+
+    color: #9bea20;
+
+    font-size: 19px;
+
+    font-weight: 900;
+}
+
+
+/* ADD CART */
+
+.add-cart-btn {
+    width: 100%;
+
+    margin-top: 14px;
+
+    padding: 11px;
+
+    background: #9bea20;
+
+    color: #080b10;
+
+    border: none;
+
+    border-radius: 5px;
+
+    font-weight: 900;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+.add-cart-btn:hover {
+    background: #b2ff3b;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   CART MESSAGE
+========================================= */
+
+.cart-message {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    padding: 15px 22px;
+
+    background: #11161d;
+
+    color: #9bea20;
+
+    border: 1px solid #9bea20;
+
+    border-radius: 6px;
+
+    font-weight: 800;
+
+    z-index: 99999;
+}
+
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: #080b10;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #303844;
+
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #9bea20;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1200px) {
+
+    .deal-products {
+        grid-template-columns:
+            repeat(4, 1fr);
+    }
+
+    .nav-menu {
+        gap: 20px;
+    }
+}
+
+
+@media (max-width: 992px) {
+
+    .deal-products {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .deal-hero {
+        padding: 50px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .lumina-nav {
+        height: auto;
+
+        padding: 20px;
+
+        flex-direction: column;
+
+        gap: 25px;
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .deal-hero {
+        width: 94%;
+
+        padding: 40px 25px;
+    }
+
+    .deal-hero h1 {
+        font-size: 42px;
+
+        letter-spacing: -1px;
+    }
+
+    .deal-products {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .section-top {
+        align-items: start;
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+    .timer {
+        flex-wrap: wrap;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .lumina-logo {
+        font-size: 28px;
+    }
+
+    .nav-menu {
+        gap: 15px;
+    }
+
+    .deal-hero h1 {
+        font-size: 32px;
+    }
+
+    .deal-hero p {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .shop-btn,
+    .outline-btn {
+        text-align: center;
+    }
+
+    .deal-products {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 10px;
+    }
+
+    .deal-card img {
+        height: 140px;
+    }
+
+    .timer-item {
+        width: 75px;
+    }
+
+    .timer-item strong {
+        font-size: 24px;
+    }
+}

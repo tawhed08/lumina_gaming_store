@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+<title>Contact - LUMINA</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+<main
+    class="pt-32
+    max-w-3xl
+    mx-auto px-5
+    pb-20">
+
+    <h1
+        class="text-5xl
+        font-black">
+
+        Contact
+        <span class="text-lime-400">
+            Us
+        </span>
+
+    </h1>
+
+
+    <p
+        class="text-gray-400
+        mt-4">
+
+        Have a question?
+        Send us a message.
+
+    </p>
+
+
+    <form
+        class="card
+        rounded-2xl
+        p-6 mt-8 space-y-4"
+        onsubmit="
+        event.preventDefault();
+        alert('Message sent successfully!');
+        ">
+
+
+        <input
+            required
+            type="text"
+            placeholder="Your Name"
+            class="w-full
+            bg-gray-900
+            border border-gray-700
+            rounded-lg p-3">
+
+
+        <input
+            required
+            type="email"
+            placeholder="Your Email"
+            class="w-full
+            bg-gray-900
+            border border-gray-700
+            rounded-lg p-3">
+
+
+        <textarea
+            required
+            rows="6"
+            placeholder="Your Message"
+            class="w-full
+            bg-gray-900
+            border border-gray-700
+            rounded-lg p-3"></textarea>
+
+
+        <button
+            type="submit"
+            class="bg-lime-400
+            text-black
+            px-7 py-3
+            rounded-lg
+            font-bold">
+
+            Send Message
+
+        </button>
+
+    </form>
+
+</main>
+
+
+<script src="components.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
