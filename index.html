@@ -3,179 +3,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Lumina Gaming Store</title>
-
+    <title>LUMINA Gaming Store</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+    <a href="index.html" class="logo">LUMINA<span>.</span></a>
 
-<nav class="navbar">
-
-    <a href="index.html" class="logo">
-        🎮 <span>LUMINA</span><b>.</b>
-
-        <small>GAMING STORE</small>
-    </a>
-
-    <div class="nav-links">
-
+    <nav class="nav-links">
         <a href="index.html" class="active">Home</a>
-
         <a href="products.html">Products</a>
-
         <a href="categories.html">Categories</a>
-
         <a href="deals.html">Deals</a>
-
-        <a href="cart.html">
-            🛒 Cart
-            <span class="cart-count">0</span>
+        <a href="orders.html">Orders</a>
+        <a href="contact.html">Contact</a>
+        <a href="cart.html" class="cart-link">
+            🛒 Cart <span class="cart-count">0</span>
         </a>
+        <a href="login.html" class="login-btn">Login</a>
+    </nav>
 
-        <a href="login.html">Login</a>
+    <button class="mobile-btn" onclick="toggleMenu()">☰</button>
+</header>
 
-    </div>
-
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
-</nav>
-
-
-<!-- ================= HERO ================= -->
 
 <section class="hero">
 
     <div class="hero-content">
 
-        <div class="hero-badge">
-            ● PREMIUM GAMING GEAR
-        </div>
+        <span class="hero-badge">🎮 NEXT LEVEL GAMING</span>
 
         <h1>
-            Level Up Your Play
-            <span>With Elite Gear</span>
-            From Lumina
+            Upgrade Your
+            <span>Gaming Setup</span>
         </h1>
 
         <p>
-            Discover premium gaming keyboards, mice, headsets
-            and controllers designed to take your gaming
-            experience to the next level.
+            Discover premium gaming gear, powerful accessories,
+            keyboards, mice, headsets and more.
         </p>
 
         <div class="hero-buttons">
-
-            <a href="products.html" class="btn primary">
-                Shop Now →
-            </a>
-
-            <a href="deals.html" class="btn secondary">
-                View Deals
-            </a>
-
+            <a href="products.html" class="hero-btn primary">Shop Now →</a>
+            <a href="deals.html" class="hero-btn secondary">View Deals</a>
         </div>
 
         <div class="hero-stats">
+            <div>
+                <strong>20+</strong>
+                <span>Products</span>
+            </div>
 
             <div>
-                <strong>100+</strong>
-                <span>Gaming Products</span>
+                <strong>10K+</strong>
+                <span>Gamers</span>
             </div>
 
             <div>
                 <strong>24/7</strong>
-                <span>Customer Support</span>
+                <span>Support</span>
             </div>
-
-            <div>
-                <strong>COD</strong>
-                <span>Available</span>
-            </div>
-
         </div>
 
     </div>
 
-</section>
-
-
-<!-- ================= DEAL BANNER ================= -->
-
-<section class="deal-banner">
-
-    <div>
-
-        <small>🔥 LIMITED TIME OFFER</small>
-
-        <h2>
-            Up To <span>50% OFF</span> Gaming Gear
-        </h2>
-
-        <p>
-            Grab today's best gaming deals before they're gone.
-        </p>
-
+    <div class="hero-card">
+        <div class="hero-card-glow"></div>
+        <div class="hero-controller">🎮</div>
+        <h3>LEVEL UP</h3>
+        <p>YOUR GAMING EXPERIENCE</p>
     </div>
 
-    <a href="deals.html" class="btn primary">
-        Shop Deals →
-    </a>
-
 </section>
 
 
-<!-- ================= FEATURED PRODUCTS ================= -->
+<section class="features">
+
+    <div class="feature-card">
+        <div>🚚</div>
+        <h3>Fast Delivery</h3>
+        <p>Quick and reliable delivery.</p>
+    </div>
+
+    <div class="feature-card">
+        <div>🔒</div>
+        <h3>Secure Payment</h3>
+        <p>Your payment is always protected.</p>
+    </div>
+
+    <div class="feature-card">
+        <div>⭐</div>
+        <h3>Quality Products</h3>
+        <p>Premium gaming equipment.</p>
+    </div>
+
+    <div class="feature-card">
+        <div>💬</div>
+        <h3>24/7 Support</h3>
+        <p>We're here whenever you need us.</p>
+    </div>
+
+</section>
+
 
 <section class="section">
 
-    <div class="section-heading">
-
+    <div class="section-header">
         <div>
-
-            <small>BROWSE COLLECTION</small>
-
-            <h2>Featured Products</h2>
-
-            <p>
-                Upgrade your gaming setup with our best products.
-            </p>
-
+            <span class="section-label">SHOP BY</span>
+            <h2>Categories</h2>
         </div>
 
-        <a href="products.html" class="view-all">
-            View All →
+        <a href="categories.html" class="view-link">View All →</a>
+    </div>
+
+    <div class="category-home-grid">
+
+        <a href="products.html?category=keyboard" class="home-category-card">
+            <span>⌨️</span>
+            <h3>Keyboards</h3>
+        </a>
+
+        <a href="products.html?category=mouse" class="home-category-card">
+            <span>🖱️</span>
+            <h3>Gaming Mouse</h3>
+        </a>
+
+        <a href="products.html?category=headset" class="home-category-card">
+            <span>🎧</span>
+            <h3>Headsets</h3>
+        </a>
+
+        <a href="products.html?category=controller" class="home-category-card">
+            <span>🎮</span>
+            <h3>Controllers</h3>
+        </a>
+
+        <a href="products.html?category=monitor" class="home-category-card">
+            <span>🖥️</span>
+            <h3>Monitors</h3>
+        </a>
+
+        <a href="products.html?category=accessory" class="home-category-card">
+            <span>🔌</span>
+            <h3>Accessories</h3>
         </a>
 
     </div>
 
+</section>
+
+
+<section class="limited-offer">
+
+    <div>
+        <span class="section-label">LIMITED TIME OFFER</span>
+        <h2>🔥 Mega Gaming Deals</h2>
+        <p>Grab your favorite gaming gear before the timer ends.</p>
+    </div>
+
+    <div class="countdown">
+
+        <div class="time-box">
+            <strong id="days">00</strong>
+            <span>Days</span>
+        </div>
+
+        <div class="time-box">
+            <strong id="hours">00</strong>
+            <span>Hours</span>
+        </div>
+
+        <div class="time-box">
+            <strong id="minutes">00</strong>
+            <span>Minutes</span>
+        </div>
+
+        <div class="time-box">
+            <strong id="seconds">00</strong>
+            <span>Seconds</span>
+        </div>
+
+    </div>
+
+    <a href="deals.html" class="hero-btn primary">Shop Deals →</a>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-header">
+        <div>
+            <span class="section-label">HOT DEALS</span>
+            <h2>Best Offers</h2>
+        </div>
+
+        <a href="deals.html" class="view-link">View All →</a>
+    </div>
+
+    <div id="homeDeals" class="product-grid"></div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-header">
+        <div>
+            <span class="section-label">FEATURED</span>
+            <h2>Popular Products</h2>
+        </div>
+
+        <a href="products.html" class="view-link">View All →</a>
+    </div>
 
     <div id="homeProducts" class="product-grid"></div>
 
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+<section class="newsletter">
+
+    <h2>Stay Updated</h2>
+
+    <p>
+        Subscribe to receive new product announcements and special deals.
+    </p>
+
+    <form onsubmit="subscribeNewsletter(event)">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+    </form>
+
+</section>
+
 
 <footer>
 
-    <div class="footer-logo">
-        🎮 LUMINA<span>.</span>
+    <div class="footer-content">
+
+        <div>
+            <a href="index.html" class="logo">LUMINA<span>.</span></a>
+            <p>Your ultimate gaming destination.</p>
+        </div>
+
+        <div>
+            <h3>Quick Links</h3>
+            <a href="products.html">Products</a>
+            <a href="deals.html">Deals</a>
+            <a href="categories.html">Categories</a>
+        </div>
+
+        <div>
+            <h3>Support</h3>
+            <a href="contact.html">Contact</a>
+            <a href="orders.html">Orders</a>
+        </div>
+
     </div>
 
-    <p>
-        Premium gaming gear for serious gamers.
-    </p>
-
     <p class="copyright">
-        © 2026 Lumina Gaming Store. All rights reserved.
+        © 2026 LUMINA Gaming Store. All rights reserved.
     </p>
 
 </footer>
-
 
 <script src="app.js"></script>
 

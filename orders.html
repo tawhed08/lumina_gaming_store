@@ -1,204 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+    <title>My Orders | LUMINA Gaming Store</title>
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0">
-
-<title>Orders - LUMINA</title>
-
-<script src="https://cdn.tailwindcss.com"></script>
-
-<link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-<link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
-<main
-    class="pt-32
-    max-w-5xl
-    mx-auto px-5
-    pb-20">
+<!-- ================= NAVBAR ================= -->
 
-    <h1
-        class="text-5xl
-        font-black">
+<header class="navbar">
 
-        My
-        <span class="text-lime-400">
-            Orders
-        </span>
+    <a href="index.html" class="logo">
+        LUMINA<span>.</span>
+    </a>
 
-    </h1>
+    <nav class="nav-links" id="navLinks">
+
+        <a href="index.html">Home</a>
+
+        <a href="products.html">Products</a>
+
+        <a href="categories.html">Categories</a>
+
+        <a href="deals.html">Deals</a>
+
+        <a href="orders.html" class="active">Orders</a>
+
+        <a href="cart.html" class="cart-link">
+            🛒
+            <span class="cart-count">0</span>
+        </a>
+
+        <a href="login.html" class="login-btn">
+            Login
+        </a>
+
+    </nav>
+
+    <button
+        class="mobile-btn"
+        onclick="toggleMenu()"
+        aria-label="Open menu"
+    >
+        ☰
+    </button>
+
+</header>
 
 
-    <div
-        id="ordersList"
-        class="space-y-4 mt-8">
+<!-- ================= PAGE ================= -->
 
-    </div>
+<main class="page orders-page">
+
+    <!-- HEADER -->
+
+    <section class="orders-hero">
+
+        <div>
+
+            <span class="page-label">
+                ORDER HISTORY
+            </span>
+
+            <h1>
+                My Orders
+            </h1>
+
+            <p>
+                Track and manage all your LUMINA gaming purchases.
+            </p>
+
+        </div>
+
+        <a
+            href="products.html"
+            class="continue-shopping"
+        >
+            Continue Shopping →
+        </a>
+
+    </section>
+
+
+    <!-- ================= STATS ================= -->
+
+    <section class="order-stats">
+
+        <div class="order-stat">
+
+            <div class="stat-icon">
+                📦
+            </div>
+
+            <div>
+
+                <span>Total Orders</span>
+
+                <strong id="totalOrders">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="order-stat">
+
+            <div class="stat-icon">
+                🛍️
+            </div>
+
+            <div>
+
+                <span>Items Purchased</span>
+
+                <strong id="totalItems">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="order-stat">
+
+            <div class="stat-icon">
+                💰
+            </div>
+
+            <div>
+
+                <span>Total Spent</span>
+
+                <strong id="totalSpent">
+                    $0.00
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ORDERS ================= -->
+
+    <section class="orders-section">
+
+        <div class="orders-section-header">
+
+            <div>
+
+                <span class="page-label">
+                    PURCHASES
+                </span>
+
+                <h2>
+                    Recent Orders
+                </h2>
+
+            </div>
+
+            <a
+                href="products.html"
+                class="shop-more-btn"
+            >
+                Shop Now →
+            </a>
+
+        </div>
+
+
+        <div id="ordersContainer">
+
+            <!-- Orders will load here -->
+
+        </div>
+
+    </section>
 
 </main>
 
 
-<script src="components.js"></script>
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    © 2026
+    <strong>LUMINA Gaming Store</strong>
+    — All Rights Reserved.
+
+</footer>
+
+
 <script src="app.js"></script>
-
-
-<script>
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
-
-        const orders =
-            JSON.parse(
-                localStorage.getItem(
-                    "luminaOrders"
-                ) || "[]"
-            );
-
-
-        const container =
-            document.getElementById(
-                "ordersList"
-            );
-
-
-        if (orders.length === 0) {
-
-            container.innerHTML = `
-
-                <div
-                    class="text-center
-                    text-gray-500
-                    py-20">
-
-                    <i
-                        class="fa-solid fa-box-open
-                        text-5xl mb-5">
-                    </i>
-
-                    <p>
-                        You don't have any orders yet.
-                    </p>
-
-                </div>
-
-            `;
-
-            return;
-
-        }
-
-
-        container.innerHTML =
-            orders.map(
-                function (order) {
-
-                    return `
-
-                        <div
-                            class="card
-                            rounded-2xl
-                            p-5">
-
-                            <div
-                                class="flex
-                                flex-wrap
-                                justify-between
-                                gap-3">
-
-                                <div>
-
-                                    <h2
-                                        class="font-bold">
-
-                                        Order #${order.id}
-
-                                    </h2>
-
-                                    <p
-                                        class="text-gray-500
-                                        text-sm mt-1">
-
-                                        ${order.date}
-
-                                    </p>
-
-                                </div>
-
-
-                                <span
-                                    class="text-lime-400
-                                    font-bold">
-
-                                    ${order.status}
-
-                                </span>
-
-                            </div>
-
-
-                            <div
-                                class="mt-4
-                                text-gray-400">
-
-                                ${order.items
-                                    .map(
-                                        item =>
-                                        `<p>
-                                            ${item.name}
-                                            × ${item.qty}
-                                        </p>`
-                                    )
-                                    .join("")
-                                }
-
-                            </div>
-
-
-                            <div
-                                class="border-t
-                                border-gray-800
-                                mt-4 pt-4
-                                flex justify-between">
-
-                                <span>
-                                    Total
-                                </span>
-
-                                <b
-                                    class="text-lime-400">
-
-                                    ${money(order.total)}
-
-                                </b>
-
-                            </div>
-
-                        </div>
-
-                    `;
-
-                }
-            ).join("");
-
-    }
-
-);
-
-</script>
 
 </body>
 </html>

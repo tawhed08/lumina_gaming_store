@@ -1,73 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>Cart - Lumina</title>
+    <title>Cart | LUMINA Gaming Store</title>
 
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
+    <!-- ================= NAVBAR ================= -->
 
-<nav class="navbar">
+    <header class="navbar">
 
-    <a href="index.html" class="logo">
-        🎮 <span>LUMINA</span><b>.</b>
-        <small>GAMING STORE</small>
-    </a>
-
-
-    <div class="nav-links">
-
-        <a href="index.html">Home</a>
-
-        <a href="products.html">Products</a>
-
-        <a href="categories.html">Categories</a>
-
-        <a href="deals.html">Deals</a>
-
-        <a href="cart.html" class="active">
-            🛒 Cart
-            <span class="cart-count">0</span>
+        <a href="index.html" class="logo">
+            LUMINA<span>.</span>
         </a>
 
-        <a href="login.html">Login</a>
+        <nav class="nav-links" id="navLinks">
 
-    </div>
+            <a href="index.html">Home</a>
+
+            <a href="products.html">Products</a>
+
+            <a href="categories.html">Categories</a>
+
+            <a href="deals.html">Deals</a>
+
+            <a href="orders.html">Orders</a>
+
+            <a href="cart.html" class="cart-link active">
+                🛒
+                <span class="cart-count">0</span>
+            </a>
+
+            <a href="login.html" class="login-btn">
+                Login
+            </a>
+
+        </nav>
+
+        <button
+            class="mobile-btn"
+            onclick="toggleMenu()"
+            aria-label="Open menu"
+        >
+            ☰
+        </button>
+
+    </header>
 
 
-    <button class="menu-btn"
-            onclick="toggleMenu()">☰</button>
+    <!-- ================= CART PAGE ================= -->
 
-</nav>
+    <main class="page cart-page">
+
+        <section class="cart-page-header">
+
+            <div>
+
+                <span class="page-label">
+                    YOUR SHOPPING BAG
+                </span>
+
+                <h1>
+                    Shopping Cart
+                </h1>
+
+                <p>
+                    Review your gaming products before checkout.
+                </p>
+
+            </div>
+
+            <a
+                href="products.html"
+                class="continue-shopping"
+            >
+                ← Continue Shopping
+            </a>
+
+        </section>
 
 
-<main class="page">
+        <!-- ================= CART CONTENT ================= -->
 
-    <div class="page-header">
-
-        <small>YOUR SHOPPING BAG</small>
-
-        <h1>Shopping Cart</h1>
-
-    </div>
+        <div class="cart-layout">
 
 
-    <div id="cartContainer"></div>
+            <!-- LEFT SIDE -->
 
-</main>
+            <section class="cart-section">
+
+                <div class="cart-section-header">
+
+                    <h2>
+                        Your Items
+                    </h2>
+
+                    <span id="cartItemCount">
+                        0 Items
+                    </span>
+
+                </div>
 
 
-<script src="app.js"></script>
+                <div id="cartContainer">
+                    <!-- JavaScript will load cart items here -->
+                </div>
+
+            </section>
+
+
+            <!-- RIGHT SIDE -->
+
+            <aside class="cart-summary">
+
+                <div class="summary-header">
+
+                    <h2>
+                        Order Summary
+                    </h2>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>
+                        Subtotal
+                    </span>
+
+                    <strong id="cartSubtotal">
+                        $0.00
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>
+                        Shipping
+                    </span>
+
+                    <strong id="cartShipping">
+                        FREE
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>
+                        Discount
+                    </span>
+
+                    <strong id="cartDiscount">
+                        $0.00
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-divider"></div>
+
+
+                <div class="summary-total">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong id="cartTotal">
+                        $0.00
+                    </strong>
+
+                </div>
+
+
+                <button
+                    class="checkout-btn"
+                    onclick="checkout()"
+                >
+                    Proceed to Checkout →
+                </button>
+
+
+                <div class="secure-checkout">
+                    🔒 Secure & Safe Checkout
+                </div>
+
+
+                <div class="payment-methods">
+
+                    <span>VISA</span>
+
+                    <span>MASTER</span>
+
+                    <span>PAYPAL</span>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        © 2026
+        <strong>LUMINA Gaming Store</strong>
+        — All Rights Reserved.
+
+    </footer>
+
+
+    <script src="app.js"></script>
 
 </body>
 </html>

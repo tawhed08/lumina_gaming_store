@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <title>Deals - Lumina</title>
+    <title>Deals | LUMINA Gaming Store</title>
 
     <link rel="stylesheet" href="style.css">
 
 </head>
 
+
 <body>
 
 
-<nav class="navbar">
+<header class="navbar">
 
     <a href="index.html" class="logo">
-        🎮 <span>LUMINA</span><b>.</b>
-        <small>GAMING STORE</small>
+        LUMINA<span>.</span>
     </a>
 
 
-    <div class="nav-links">
+    <nav class="nav-links" id="navLinks">
 
         <a href="index.html">
             Home
@@ -39,142 +40,260 @@
             Categories
         </a>
 
-        <a href="deals.html"
-           class="active">
+        <a
+            href="deals.html"
+            class="active"
+        >
             Deals
         </a>
 
-        <a href="cart.html">
-            🛒 Cart
-            <span class="cart-count">0</span>
+        <a href="orders.html">
+            Orders
         </a>
 
-        <a href="login.html">
+        <a href="cart.html" class="cart-link">
+
+            🛒
+
+            <span class="cart-count">
+                0
+            </span>
+
+        </a>
+
+        <a
+            href="login.html"
+            class="login-btn"
+        >
             Login
         </a>
+
+    </nav>
+
+
+    <button
+        class="mobile-btn"
+        onclick="toggleMenu()"
+        aria-label="Open menu"
+    >
+        ☰
+    </button>
+
+</header>
+
+
+
+<!-- DEAL HERO -->
+
+<section class="limited-offer">
+
+    <div>
+
+        <div class="offer-title">
+            LIMITED TIME OFFER
+        </div>
+
+        <h2>
+            Gaming Deals Up To 50% OFF
+        </h2>
+
+        <p>
+            Grab your favorite gaming gear before the offer ends.
+        </p>
 
     </div>
 
 
-    <button class="menu-btn"
-            onclick="toggleMenu()">☰</button>
+    <div class="countdown">
 
-</nav>
+        <div class="time-box">
+
+            <strong id="days">
+                00
+            </strong>
+
+            <span>
+                Days
+            </span>
+
+        </div>
+
+
+        <div class="time-box">
+
+            <strong id="hours">
+                00
+            </strong>
+
+            <span>
+                Hours
+            </span>
+
+        </div>
+
+
+        <div class="time-box">
+
+            <strong id="minutes">
+                00
+            </strong>
+
+            <span>
+                Minutes
+            </span>
+
+        </div>
+
+
+        <div class="time-box">
+
+            <strong id="seconds">
+                00
+            </strong>
+
+            <span>
+                Seconds
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
 
 
 <main class="page">
 
 
-    <!-- DEAL HERO -->
+    <!-- DEAL HEADER -->
 
-    <section class="deal-hero">
+    <section class="page-header">
 
-        <small>🔥 LIMITED TIME SALE</small>
+        <div>
 
-        <h1>
-            Mega <span>Deals</span>
-        </h1>
+            <span class="page-label">
+                SPECIAL OFFERS
+            </span>
 
-        <p>
-            Save up to 50% on selected gaming products.
-        </p>
+            <h1>
+                Gaming Deals
+            </h1>
 
-
-        <div class="countdown">
-
-            <div>
-                <strong id="days">00</strong>
-                <span>Days</span>
-            </div>
-
-            <div>
-                <strong id="hours">00</strong>
-                <span>Hours</span>
-            </div>
-
-            <div>
-                <strong id="minutes">00</strong>
-                <span>Minutes</span>
-            </div>
-
-            <div>
-                <strong id="seconds">00</strong>
-                <span>Seconds</span>
-            </div>
+            <p>
+                Save more on your favorite gaming products.
+            </p>
 
         </div>
 
     </section>
 
 
-    <!-- DEAL PRODUCTS -->
 
-    <section class="section">
+    <!-- DEAL FILTER -->
 
-        <div class="section-heading">
+    <section class="product-toolbar">
 
-            <div>
+        <div class="filter-buttons">
 
-                <small>LIMITED TIME</small>
-
-                <h2>Today's Best Deals</h2>
-
-                <p>
-                    Don't miss these special offers.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="deal-filter">
-
-            <button onclick="filterDeals('all')">
+            <button
+                type="button"
+                class="deal-filter-btn active"
+                onclick="filterDeals('all', this)"
+            >
                 All Deals
             </button>
 
-            <button onclick="filterDeals(10)">
-                10% OFF
+
+            <button
+                type="button"
+                class="deal-filter-btn"
+                onclick="filterDeals(10, this)"
+            >
+                10%+ OFF
             </button>
 
-            <button onclick="filterDeals(20)">
-                20% OFF
+
+            <button
+                type="button"
+                class="deal-filter-btn"
+                onclick="filterDeals(20, this)"
+            >
+                20%+ OFF
             </button>
 
-            <button onclick="filterDeals(30)">
-                30% OFF
+
+            <button
+                type="button"
+                class="deal-filter-btn"
+                onclick="filterDeals(30, this)"
+            >
+                30%+ OFF
             </button>
 
-            <button onclick="filterDeals(40)">
-                40% OFF
+
+            <button
+                type="button"
+                class="deal-filter-btn"
+                onclick="filterDeals(40, this)"
+            >
+                40%+ OFF
             </button>
 
-            <button onclick="filterDeals(50)">
+
+            <button
+                type="button"
+                class="deal-filter-btn"
+                onclick="filterDeals(50, this)"
+            >
                 50% OFF
             </button>
 
         </div>
 
+    </section>
 
-        <div id="dealProducts"
-             class="product-grid">
+
+
+    <!-- DEAL PRODUCTS -->
+
+    <section>
+
+        <div class="section-title">
+
+            <h2>
+                Today's Deals
+            </h2>
+
+            <span>
+                Limited Stock
+            </span>
+
         </div>
 
+
+        <!-- IMPORTANT: app.js uses this ID -->
+
+        <div
+            id="dealsContainer"
+            class="product-grid"
+        ></div>
+
     </section>
+
 
 </main>
 
 
+
 <footer>
 
-    <div class="footer-logo">
-        🎮 LUMINA<span>.</span>
-    </div>
-
-    <p>Premium gaming gear for serious gamers.</p>
+    © 2026
+    <strong>LUMINA Gaming Store</strong>
+    — All Rights Reserved.
 
 </footer>
+
 
 
 <script src="app.js"></script>

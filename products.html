@@ -1,30 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>Products - Lumina</title>
+    <title>Products | LUMINA Gaming Store</title>
 
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-
-<nav class="navbar">
+<header class="navbar">
 
     <a href="index.html" class="logo">
-        🎮 <span>LUMINA</span><b>.</b>
-        <small>GAMING STORE</small>
+        LUMINA<span>.</span>
     </a>
 
-    <div class="nav-links">
+    <nav class="nav-links" id="navLinks">
 
         <a href="index.html">Home</a>
 
@@ -40,75 +33,179 @@
             Deals
         </a>
 
-        <a href="cart.html">
-            🛒 Cart
+        <a href="orders.html">
+            Orders
+        </a>
+
+        <a href="cart.html" class="cart-link">
+            🛒
             <span class="cart-count">0</span>
         </a>
 
-        <a href="login.html">
+        <a href="login.html" class="login-btn">
             Login
         </a>
 
-    </div>
+    </nav>
 
-    <button class="menu-btn"
-            onclick="toggleMenu()">☰</button>
+    <button
+        class="mobile-btn"
+        onclick="toggleMenu()"
+        aria-label="Open menu"
+    >
+        ☰
+    </button>
 
-</nav>
+</header>
 
 
 <main class="page">
 
-    <div class="page-header">
+    <!-- PAGE HEADER -->
 
-        <small>OUR COLLECTION</small>
+    <section class="page-header">
 
-        <h1>Gaming Products</h1>
+        <div>
 
-        <p>
-            Find everything you need for your ultimate gaming setup.
-        </p>
+            <span class="page-label">
+                LUMINA COLLECTION
+            </span>
 
-    </div>
+            <h1>
+                Gaming Products
+            </h1>
 
+            <p>
+                Upgrade your gaming setup with premium gear.
+            </p>
 
-    <div class="filter-bar">
+        </div>
 
-        <button onclick="filterProducts('all')">
-            All
-        </button>
-
-        <button onclick="filterProducts('keyboard')">
-            Keyboards
-        </button>
-
-        <button onclick="filterProducts('mouse')">
-            Mouse
-        </button>
-
-        <button onclick="filterProducts('headset')">
-            Headsets
-        </button>
-
-        <button onclick="filterProducts('controller')">
-            Controllers
-        </button>
-
-    </div>
+    </section>
 
 
-    <div id="allProducts" class="product-grid"></div>
+    <!-- SEARCH -->
+
+    <section class="product-toolbar">
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="productSearch"
+                placeholder="Search products..."
+                oninput="searchProducts()"
+            >
+
+            <button
+                type="button"
+                onclick="clearProductSearch()"
+            >
+                Clear
+            </button>
+
+        </div>
+
+
+        <!-- FILTERS -->
+
+        <div class="filter-buttons">
+
+            <button
+                type="button"
+                class="filter-btn active"
+                onclick="filterProducts('all', this)"
+            >
+                All
+            </button>
+
+            <button
+                type="button"
+                class="filter-btn"
+                onclick="filterProducts('keyboard', this)"
+            >
+                Keyboards
+            </button>
+
+            <button
+                type="button"
+                class="filter-btn"
+                onclick="filterProducts('mouse', this)"
+            >
+                Mouse
+            </button>
+
+            <button
+                type="button"
+                class="filter-btn"
+                onclick="filterProducts('headset', this)"
+            >
+                Headsets
+            </button>
+
+            <button
+                type="button"
+                class="filter-btn"
+                onclick="filterProducts('controller', this)"
+            >
+                Controllers
+            </button>
+
+            <button
+                type="button"
+                class="filter-btn"
+                onclick="filterProducts('monitor', this)"
+            >
+                Monitors
+            </button>
+
+            <button
+                type="button"
+                class="filter-btn"
+                onclick="filterProducts('accessory', this)"
+            >
+                Accessories
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCTS -->
+
+    <section>
+
+        <div class="section-title">
+
+            <h2>
+                All Products
+            </h2>
+
+            <span>
+                Premium Gaming Gear
+            </span>
+
+        </div>
+
+
+        <!-- IMPORTANT: app.js uses this ID -->
+
+        <div
+            id="productsContainer"
+            class="product-grid"
+        ></div>
+
+    </section>
 
 </main>
 
 
 <footer>
 
-    <div class="footer-logo">
-        🎮 LUMINA<span>.</span>
-    </div>
-
-    <p>Premium gaming gear for serious gamers.</p>
+    © 2026
+    <strong>LUMINA Gaming Store</strong>
+    — All Rights Reserved.
 
 </footer>
 

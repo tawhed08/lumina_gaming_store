@@ -1,115 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0">
-
-<title>Contact - LUMINA</title>
-
-<script src="https://cdn.tailwindcss.com"></script>
-
-<link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-<link rel="stylesheet" href="style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | LUMINA</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
-<main
-    class="pt-32
-    max-w-3xl
-    mx-auto px-5
-    pb-20">
+<header class="navbar">
 
-    <h1
-        class="text-5xl
-        font-black">
+    <a href="index.html" class="logo">LUMINA<span>.</span></a>
 
-        Contact
-        <span class="text-lime-400">
-            Us
-        </span>
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="categories.html">Categories</a>
+        <a href="deals.html">Deals</a>
+        <a href="orders.html">Orders</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="cart.html">🛒 Cart <span class="cart-count">0</span></a>
+        <a href="login.html" class="login-btn">Login</a>
+    </nav>
 
-    </h1>
+    <button class="mobile-btn" onclick="toggleMenu()">☰</button>
 
-
-    <p
-        class="text-gray-400
-        mt-4">
-
-        Have a question?
-        Send us a message.
-
-    </p>
+</header>
 
 
-    <form
-        class="card
-        rounded-2xl
-        p-6 mt-8 space-y-4"
-        onsubmit="
-        event.preventDefault();
-        alert('Message sent successfully!');
-        ">
+<section class="page-header">
+
+    <span class="section-label">GET IN TOUCH</span>
+
+    <h1>Contact Us</h1>
+
+    <p>Need help? We're here for you.</p>
+
+</section>
 
 
-        <input
-            required
-            type="text"
-            placeholder="Your Name"
-            class="w-full
-            bg-gray-900
-            border border-gray-700
-            rounded-lg p-3">
+<section class="contact-section">
+
+    <div class="contact-info">
+
+        <div class="contact-card">
+            <span>📧</span>
+            <h3>Email</h3>
+            <p>support@lumina.com</p>
+        </div>
+
+        <div class="contact-card">
+            <span>📞</span>
+            <h3>Phone</h3>
+            <p>+880 1234-567890</p>
+        </div>
+
+        <div class="contact-card">
+            <span>📍</span>
+            <h3>Location</h3>
+            <p>Dhaka, Bangladesh</p>
+        </div>
+
+    </div>
 
 
-        <input
-            required
-            type="email"
-            placeholder="Your Email"
-            class="w-full
-            bg-gray-900
-            border border-gray-700
-            rounded-lg p-3">
+    <div class="contact-form">
+
+        <h2>Send us a message</h2>
+
+        <form onsubmit="submitContact(event)">
+
+            <input
+                type="text"
+                id="contactName"
+                placeholder="Your Name"
+                required
+            >
+
+            <input
+                type="email"
+                id="contactEmail"
+                placeholder="Your Email"
+                required
+            >
+
+            <textarea
+                id="contactMessage"
+                placeholder="Your Message"
+                rows="6"
+                required
+            ></textarea>
+
+            <button type="submit" class="auth-button">
+                Send Message
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
 
 
-        <textarea
-            required
-            rows="6"
-            placeholder="Your Message"
-            class="w-full
-            bg-gray-900
-            border border-gray-700
-            rounded-lg p-3"></textarea>
+<section class="faq-section">
+
+    <div class="section-header">
+        <div>
+            <span class="section-label">HELP CENTER</span>
+            <h2>Frequently Asked Questions</h2>
+        </div>
+    </div>
 
 
-        <button
-            type="submit"
-            class="bg-lime-400
-            text-black
-            px-7 py-3
-            rounded-lg
-            font-bold">
+    <div class="faq-item">
 
-            Send Message
-
+        <button onclick="toggleFAQ(this)">
+            How long does delivery take?
+            <span>+</span>
         </button>
 
-    </form>
+        <div class="faq-answer">
+            <p>
+                Delivery usually takes 2–5 business days depending on location.
+            </p>
+        </div>
 
-</main>
+    </div>
 
 
-<script src="components.js"></script>
+    <div class="faq-item">
+
+        <button onclick="toggleFAQ(this)">
+            Can I cancel my order?
+            <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+            <p>
+                Yes. Contact our support team as soon as possible.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="faq-item">
+
+        <button onclick="toggleFAQ(this)">
+            Do you offer refunds?
+            <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+            <p>
+                Refunds are available according to our return policy.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="faq-item">
+
+        <button onclick="toggleFAQ(this)">
+            How can I track my order?
+            <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+            <p>
+                Your order information will be available on the Orders page.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+    <p class="copyright">© 2026 LUMINA Gaming Store</p>
+</footer>
+
 <script src="app.js"></script>
 
 </body>
